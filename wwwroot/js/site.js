@@ -1,4 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
@@ -50,8 +50,9 @@ var winDraw;
 var minWinDraw;
 var minWinFave;
 var minProfitAll;
-var prevLossAll = 0;
+var prevLossAll;
 var profitAll;
+var wagerAll;
 
 //Get Odds
 $(function () {
@@ -62,7 +63,7 @@ $(function () {
 		//console.log("minProfitAll: " + minProfitAll);
 		//console.log("prevLossAll: " + prevLossAll);
 		//console.log("Draw_Odds: " + oddsDraw);
-
+		//profitAll = minProfitAll + prevLossAll;
 		if (oddsDraw.includes("-")) {
 			decOddsDraw = Number((Math.abs(100/oddsDraw).toFixed(2)))+1;
 		} else {
@@ -168,11 +169,15 @@ $(function () {
 //Calculate Profit
 function calcProfit(decOddsDraw, decOddsFave, minProfitAll, prevLossAll) {
     console.log("calcProfit");
+
 	//console.log("wagerFave: " + wagerFave);
 	console.log("decOddsDraw: " + decOddsDraw);
 	console.log("decOddsFave: " + decOddsFave);
 	console.log("minProfitAll: " + minProfitAll);
 	console.log("prevLossAll: " + prevLossAll);
+	profitAll = Number(parseInt(minProfitAll) + parseInt(prevLossAll)).toFixed(2);
+	console.log("profitAll: " + profitAll);
+	
 	//profitAll = ALL_Profit
 // 	if(prevLossAll == 0){
 		// console.log("prevLossAll: " + $('#ALL_PreviousLoss').val());
@@ -196,13 +201,13 @@ function calcProfit(decOddsDraw, decOddsFave, minProfitAll, prevLossAll) {
 	console.log("profitFave: " + profitFave);
 	//Table Entries
 	//Wager Fave
-	$('#FA_Wager').val(Number(wagerFave).toFixed(2));
+	$('#FA_Wager').text(Number(wagerFave).toFixed(2));
 	//Payout Fave
-	$('#FA_Payout').val(Number(payoutFave).toFixed(2));
+	$('#FA_Payout').text(Number(payoutFave).toFixed(2));
 	//Win Fave
-    $('#FA_Win').val(Number(winFave).toFixed(2));
+    $('#FA_Win').text(Number(winFave).toFixed(2));
 	//Profit Fave
-	$('#FA_Profit').val(Number(profitFave).toFixed(2));
+	$('#FA_Profit').text(Number(profitFave).toFixed(2));
 	
 	wagerDraw = 0.50;
 	payoutDraw = 0.00; //wagerDraw * decOddsDraw;
@@ -216,124 +221,134 @@ function calcProfit(decOddsDraw, decOddsFave, minProfitAll, prevLossAll) {
 	console.log("profitDraw: " + profitDraw);
 	//Table Entries
 	//Wager Draw
-	$('#Draw_Wager').val(Number(wagerDraw).toFixed(2));
+	$('#Draw_Wager').text(Number(wagerDraw).toFixed(2));
 	//Payout Draw
-	$('#Draw_Payout').val(Number(payoutDraw).toFixed(2));
+	$('#Draw_Payout').text(Number(payoutDraw).toFixed(2));
 	//Win Draw
-    $('#Draw_Win').val(Number(winDraw).toFixed(2));
+    $('#Draw_Win').text(Number(winDraw).toFixed(2));
 	//Profit Draw
-	$('#Draw_Profit').val(Number(profitDraw).toFixed(2));
+	$('#Draw_Profit').text(Number(profitDraw).toFixed(2));
 	
 	//Process To Get Min Profit For Fave and Draw
 	//Step 1: Get Lesser Profit
-	if ((profitFave < minProfitAll) && (profitDraw < minProfitAll)) {
+	if ((profitFave < profitAll) && (profitDraw < profitAll)) {
 		console.log("HERE1");
-		while(profitFave < minProfitAll){
-		//while((profitFave < profitDraw) && (profitFave < minProfitAll)){
+		while(profitFave < profitAll){
+		//while((profitFave < profitDraw) && (profitFave < profitAll)){
 			//profitFave++;
 			wagerFave = wagerFave + 0.01;
 			//wagerFave = Number(wagerFave).toFixed(2);
-			console.log("wagerFave: " + wagerFave);
+			//console.log("wagerFave: " + wagerFave);
 			payoutFave = wagerFave * decOddsFave;
 			payoutFave = Number(payoutFave).toFixed(2);
-			console.log("payoutFave: " + payoutFave);
+			//console.log("payoutFave: " + payoutFave);
 			winFave = payoutFave - wagerFave;
 			winFave = Number(winFave).toFixed(2);
-			console.log("winFave: " + winFave);
+			//console.log("winFave: " + winFave);
 			profitFave = winFave - wagerDraw;
 			//profitFave = Number(profitFave).toFixed(2);
-			console.log("profitFave: " + profitFave);
+			//console.log("profitFave: " + profitFave);
 			
 			//wagerDraw = wagerDraw + 0.01;
-			console.log("wagerDraw: " + wagerDraw);
+			//console.log("wagerDraw: " + wagerDraw);
 			payoutDraw = wagerDraw * decOddsDraw;
 			payoutDraw = Number(payoutDraw).toFixed(2);
-			console.log("payoutDraw: " + payoutDraw);
+			//console.log("payoutDraw: " + payoutDraw);
 			winDraw = payoutDraw - wagerDraw;
 			winDraw = Number(winDraw).toFixed(2);
-			console.log("winDraw: " + winDraw);
+			//console.log("winDraw: " + winDraw);
 			profitDraw = winDraw - wagerFave;
 			//profitDraw = Number(profitDraw).toFixed(2);
-			console.log("profitDraw: " + profitDraw);
+			//console.log("profitDraw: " + profitDraw);
 			
 		}
-			//Table Entries
-			//Wager Fave
-			$('#FA_Wager').val(Number(wagerFave).toFixed(2));
-			//Payout Fave
-			$('#FA_Payout').val(Number(payoutFave).toFixed(2));
-			//Win Fave
-			$('#FA_Win').val(Number(winFave).toFixed(2));
-			//Profit Fave
-			$('#FA_Profit').val(Number(profitFave).toFixed(2));
+		//Table Entries
+		//Wager Fave
+		$('#FA_Wager').text(Number(wagerFave).toFixed(2));
+		//Payout Fave
+		$('#FA_Payout').text(Number(payoutFave).toFixed(2));
+		//Win Fave
+		$('#FA_Win').text(Number(winFave).toFixed(2));
+		//Profit Fave
+		$('#FA_Profit').text(Number(profitFave).toFixed(2));
+		
+		//Table Entries
+		//Wager Draw
+		$('#Draw_Wager').text(Number(wagerDraw).toFixed(2));
+		//Payout Draw
+		$('#Draw_Payout').text(Number(payoutDraw).toFixed(2));
+		//Win Draw
+		$('#Draw_Win').text(Number(winDraw).toFixed(2));
+		//Profit Draw
+		$('#Draw_Profit').text(Number(profitDraw).toFixed(2));
+		
+		while(profitDraw < profitAll){
+			//console.log("HERE3");
+			//console.log("profitDraw: " + profitDraw);
+			//console.log("profitAll: " + profitAll);
+			wagerDraw = wagerDraw + 0.01;
+			//console.log("wagerDraw: " + wagerDraw);
+			payoutDraw = wagerDraw * decOddsDraw;
+			payoutDraw = Number(payoutDraw).toFixed(2);
+			//console.log("payoutDraw: " + payoutDraw);
+			winDraw = payoutDraw - wagerDraw;
+			winDraw = Number(winDraw).toFixed(2);
+			//console.log("winDraw: " + winDraw);
+			profitDraw = winDraw - wagerFave;
+			//profitDraw = Number(profitDraw).toFixed(2);
+			//console.log("profitDraw: " + profitDraw);
 			
-			//Table Entries
-			//Wager Draw
-			$('#Draw_Wager').val(Number(wagerDraw).toFixed(2));
-			//Payout Draw
-			$('#Draw_Payout').val(Number(payoutDraw).toFixed(2));
-			//Win Draw
-			$('#Draw_Win').val(Number(winDraw).toFixed(2));
-			//Profit Draw
-			$('#Draw_Profit').val(Number(profitDraw).toFixed(2));
-			
-			while(profitDraw < minProfitAll){
-				//console.log("HERE3");
-				console.log("profitDraw: " + profitDraw);
-				console.log("minProfitAll: " + minProfitAll);
-				wagerDraw = wagerDraw + 0.01;
-				console.log("wagerDraw: " + wagerDraw);
-				payoutDraw = wagerDraw * decOddsDraw;
-				payoutDraw = Number(payoutDraw).toFixed(2);
-				console.log("payoutDraw: " + payoutDraw);
-				winDraw = payoutDraw - wagerDraw;
-				winDraw = Number(winDraw).toFixed(2);
-				console.log("winDraw: " + winDraw);
-				profitDraw = winDraw - wagerFave;
-				//profitDraw = Number(profitDraw).toFixed(2);
-				console.log("profitDraw: " + profitDraw);
-				
+			profitFave = winFave - wagerDraw;
+			if(profitFave < profitAll){
+				console.log("Yes");
+				console.log("profitFave: " + profitFave);
 				wagerFave = wagerFave + 0.01;
-				console.log("wagerFave: " + wagerFave);
+				//console.log("wagerFave: " + wagerFave);
 				payoutFave = wagerFave * decOddsFave;
 				payoutFave = Number(payoutFave).toFixed(2);
-				console.log("payoutFave: " + payoutFave);
+				//console.log("payoutFave: " + payoutFave);
 				winFave = payoutFave - wagerFave;
 				winFave = Number(winFave).toFixed(2);
-				console.log("winFave: " + winFave);
-				profitFave = winFave - wagerDraw;
-				//profitFave = Number(profitFave).toFixed(2);
-				console.log("profitFave: " + profitFave);
+				//console.log("winFave: " + winFave);
+				profitFave = Number(profitFave).toFixed(2);
+				//console.log("profitFave: " + profitFave);
 			}
 			
-			//Table Entries
-			//Wager Fave
-			$('#FA_Wager').val(Number(wagerFave).toFixed(2));
-			//Payout Fave
-			$('#FA_Payout').val(Number(payoutFave).toFixed(2));
-			//Win Fave
-			$('#FA_Win').val(Number(winFave).toFixed(2));
-			//Profit Fave
-			$('#FA_Profit').val(Number(profitFave).toFixed(2));
-			
-			//Table Entries
-			//Wager Draw
-			$('#Draw_Wager').val(Number(wagerDraw).toFixed(2));
-			//Payout Draw
-			$('#Draw_Payout').val(Number(payoutDraw).toFixed(2));
-			//Win Draw
-			$('#Draw_Win').val(Number(winDraw).toFixed(2));
-			//Profit Draw
-			$('#Draw_Profit').val(Number(profitDraw).toFixed(2));
+		}
+		//Total Wagers
+		wagerAll = Number(wagerFave + wagerDraw); //.toFixed(2);
+		
+		//Table Entries
+		//Wager Fave
+		$('#FA_Wager').text(Number(wagerFave).toFixed(2));
+		//Payout Fave
+		$('#FA_Payout').text(Number(payoutFave).toFixed(2));
+		//Win Fave
+		$('#FA_Win').text(Number(winFave).toFixed(2));
+		//Profit Fave
+		$('#FA_Profit').text(Number(profitFave).toFixed(2));
+		
+		//Table Entries
+		//Wager Draw
+		$('#Draw_Wager').text(Number(wagerDraw).toFixed(2));
+		//Payout Draw
+		$('#Draw_Payout').text(Number(payoutDraw).toFixed(2));
+		//Win Draw
+		$('#Draw_Win').text(Number(winDraw).toFixed(2));
+		//Profit Draw
+		$('#Draw_Profit').text(Number(profitDraw).toFixed(2));
+		//All Wagers
+		$('#ALL_TotalWager').text(Number(wagerAll).toFixed(2));
+		console.log("ALL_TotalWager: " + wagerAll);
 	}
 	
-	if ((profitFave < profitDraw) && (profitDraw >= minProfitAll)){
+	if ((profitFave < profitDraw) && (profitDraw >= profitAll)){
 		console.log("HERE4");
 	}
-	/* if ((profitDraw < profitFave) && (profitDraw < minProfitAll)) {
+	/* if ((profitDraw < profitFave) && (profitDraw < profitAll)) {
 		console.log("HERE2");
-		while(profitDraw < minProfitAll){
-		//while((profitFave < profitDraw) && (profitFave < minProfitAll)){
+		while(profitDraw < profitAll){
+		//while((profitFave < profitDraw) && (profitFave < profitAll)){
 			//profitFave++;
 			wagerDraw = wagerDraw + 0.01;
 			//wagerFave = Number(wagerFave).toFixed(2);
@@ -359,12 +374,12 @@ function calcProfit(decOddsDraw, decOddsFave, minProfitAll, prevLossAll) {
 			$('#Draw_Profit').val(Number(profitDraw).toFixed(2));
 	}
 
-	if((profitFave - wagerDraw) < minProfitAll && (profitDraw - wagerFave) < minProfitAll){
+	if((profitFave - wagerDraw) < profitAll && (profitDraw - wagerFave) < profitAll){
 		
 		profitAll = profitFave - profitDraw;
 		console.log("profitAll: " + profitAll);
-		while((profitFave - wagerDraw) < minProfitAll){
-		//while((profitFave - wagerDraw) < minProfitAll && (profitDraw - wagerFave) < minProfitAll)){
+		while((profitFave - wagerDraw) < profitAll){
+		//while((profitFave - wagerDraw) < profitAll && (profitDraw - wagerFave) < profitAll)){
 			//profitFave++;
 			wagerFave = wagerFave + 0.01;
 			//wagerFave = Number(wagerFave).toFixed(2);
@@ -389,8 +404,8 @@ function calcProfit(decOddsDraw, decOddsFave, minProfitAll, prevLossAll) {
 			//Profit Fave
 			$('#FA_Profit').val(Number(profitFave).toFixed(2));
 			
-		while((profitDraw - wagerFave) < minProfitAll){
-		//while((profitFave < profitDraw) && (profitFave < minProfitAll)){
+		while((profitDraw - wagerFave) < profitAll){
+		//while((profitFave < profitDraw) && (profitFave < profitAll)){
 			//profitFave++;
 			wagerDraw = wagerDraw + 0.01;
 			//wagerFave = Number(wagerFave).toFixed(2);
