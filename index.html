@@ -41,31 +41,22 @@
 					<th>
 						Wager
 					</th>
-					<th>
+					<th style="display:none">
 						Payout
 					</th>
-					<th>
+					<th style="display:none">
 						Win
 					</th>
-					<th>
+					<th style="display:none">
 						Profit
 					</th>
 					<th>
 						Total Wager
 					</th>
-<!-- 					<th>
-						Begin Bank
-					</th> -->
-					<th>
-						Min Profit
-					</th>
-					<th>
-						Previous Loss
-					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr  style="text-align:center">
+				<tr style="text-align:center">
 					<td>
 						<label>FA</label>
 					</td>
@@ -76,31 +67,22 @@
 						<label id="FA_DecOdds"></label>
 					</td>
 					<td>
-						<input id="FA_Wager" type="text" value="0.00" readonly="true"></input>
+						<label id="FA_Wager" type="text" value="0.00" readonly="true"></label>
+					</td>
+					<td style="display:none">
+						<label id="FA_Payout" type="text" value="0.00" readonly="true"></label>
+					</td>
+					<td style="display:none">
+						<label id="FA_Win" type="text" value="0.00" readonly="true"></label>
+					</td>
+					<td style="display:none">
+						<label id="FA_Profit" type="text" value="0.00" readonly="true"></label>
 					</td>
 					<td>
-						<input id="FA_Payout" type="text" value="0.00" readonly="true"></input>
-					</td>
-					<td>
-						<input id="FA_Win" type="text" value="0.00" readonly="true"></input>
-					</td>
-					<td>
-						<input id="FA_Profit" type="text" value="0.00" readonly="true"></input>
-					</td>
-					<td>
-						<label id="FA_TotalWager" type="text" value="0.00"></label>
-					</td>
-<!-- 					<td>
-						<input id="FA_BeginBank" type="text"></input>
-					</td> -->
-					<td>
-						<input id="ALL_MinProfit" type="text" value="0.00"></input>
-					</td>
-					<td>
-						<input id="ALL_PreviousLoss" type="text" value="0.00"></input>
+						<label id="ALL_TotalWager" type="text" value="0.00"></label>
 					</td>
 				</tr>
-				<tr  style="text-align:center">
+				<tr style="text-align:center">
 					<td>
 						<label>Draw</label>
 					</td>
@@ -111,35 +93,64 @@
 						<label id="Draw_DecOdds"></label>
 					</td>
 					<td>
-						<input id="Draw_Wager" type="text" value="0.00" readonly="true"></input>
+						<label id="Draw_Wager" type="text" value="0.00" readonly="true"></label>
 					</td>
-					<td>
-						<input id="Draw_Payout" type="text" value="0.00"readonly="true"></input>
+					<td style="display:none">
+						<label id="Draw_Payout" type="text" value="0.00"readonly="true"></label>
 					</td>
-					<td>
-						<input id="Draw_Win" type="text" value="0.00" readonly="true"></input>
+					<td style="display:none">
+						<label id="Draw_Win" type="text" value="0.00" readonly="true"></label>
+					</td >
+					<td style="display:none">
+						<label id="Draw_Profit" type="text" value="0.00"></label>
 					</td>
-					<td>
-						<input id="Draw_Profit" type="text" value="0.00"></input>
-					</td>
-					<td>
+					<td style="display:none">
 						<label id="Draw_TotalWager" type="text" value="0.00"></label>
 					</td>
-<!-- 					<td>
-						<input id="Draw_BeginBank" type="text"></input>
-					</td> -->
-					<td>
-						<input id="Draw_MinWin" type="text" value="0.00" style="display:none"></input>
+					<td style="display:none">
+						<input id="Draw_MinWin" type="text" value="0.00"></input>
 					</td>
-					<td>
-						<input id="Draw_PreviousLoss" type="text" value="0.00" style="display:none"></input>
+					<td style="display:none">
+						<input id="Draw_PreviousLoss" type="text" value="0.00"></input>
 					</td>
 				</tr>
 			</tbody>
 		</table>
+		<table class="tablesorter">
+			<thead>
+				<tr style="text-align:center">
+					<th>
+						Min Profit
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="text-align:center">		
+					<td>
+						<input id="ALL_MinProfit" type="text" value="0.00"></input>
+					</td>
+				</tr>				
+			</tbody>
+		</table>
+		<table class="tablesorter">
+			<thead>
+				<tr style="text-align:center">
+					<th>
+						Previous Loss
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="text-align:center">		
+					<td>
+						<input id="ALL_PreviousLoss" type="text" value="0.00"></input>
+					</td>
+				</tr>				
+			</tbody>
+		</table>
 	</div>
 	<br />
-	<div>
+	<!-- <div>
 	<h6>Process</h6>
 	<p>
 	<ul>
@@ -150,6 +161,6 @@
 		<li>TotalProfit = DrawWin - FAWager</li>
 	</ul>
 	</p>
-	</div>
+	</div> -->
    </body>
 </html>
