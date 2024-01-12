@@ -41,13 +41,13 @@
 					<th>
 						Wager
 					</th>
-					<th style="display:none">
+					<th>
 						Payout
 					</th>
-					<th style="display:none">
+					<th>
 						Win
 					</th>
-					<th style="display:none">
+					<th>
 						Profit
 					</th>
 					<th>
@@ -61,25 +61,25 @@
 						<label>FA</label>
 					</td>
 					<td>
-						<input id="FA_Odds" type="text" style="text-align:center"></input>
+						<input id="FA_Odds" type="text" style="text-align:left"></input>
 					</td>
 					<td>
-						<label id="FA_DecOdds"></label>
+						<b><label id="FA_DecOdds"></label></b>
 					</td>
 					<td>
-						<label id="FA_Wager" type="text" value="0.00" readonly="true"></label>
-					</td>
-					<td style="display:none">
-						<label id="FA_Payout" type="text" value="0.00" readonly="true"></label>
-					</td>
-					<td style="display:none">
-						<label id="FA_Win" type="text" value="0.00" readonly="true"></label>
-					</td>
-					<td style="display:none">
-						<label id="FA_Profit" type="text" value="0.00" readonly="true"></label>
+						<b><label id="FA_Wager" type="text" value="0.00" readonly="true"></label></b>
 					</td>
 					<td>
-						<label id="ALL_TotalWager" type="text" value="0.00"></label>
+						<b><label id="FA_Payout" type="text" value="0.00" readonly="true"></label></b>
+					</td>
+					<td>
+						<b><label id="FA_Win" type="text" value="0.00" readonly="true"></label></b>
+					</td>
+					<td>
+						<b><label id="FA_Profit" type="text" value="0.00" readonly="true"></label></b>
+					</td>
+					<td>
+						<b><label id="ALL_TotalWager" type="text" value="0.00"></label></b>
 					</td>
 				</tr>
 				<tr style="text-align:center">
@@ -87,22 +87,22 @@
 						<label>Draw</label>
 					</td>
 					<td>
-						<input  id="Draw_Odds" type="text" style="text-align:center"></input>
+						<input  id="Draw_Odds" type="text" style="text-align:left"></input>
 					</td>
 					<td>
-						<label id="Draw_DecOdds"></label>
+						<b><label id="Draw_DecOdds"></label></b>
 					</td>
 					<td>
-						<label id="Draw_Wager" type="text" value="0.00" readonly="true"></label>
+						<b><label id="Draw_Wager" type="text" value="0.00" readonly="true"></label></b>
 					</td>
-					<td style="display:none">
-						<label id="Draw_Payout" type="text" value="0.00"readonly="true"></label>
+					<td>
+						<b><label id="Draw_Payout" type="text" value="0.00"readonly="true"></label></b>
 					</td>
-					<td style="display:none">
-						<label id="Draw_Win" type="text" value="0.00" readonly="true"></label>
+					<td>
+						<b><label id="Draw_Win" type="text" value="0.00" readonly="true"></label></b>
 					</td >
-					<td style="display:none">
-						<label id="Draw_Profit" type="text" value="0.00"></label>
+					<td>
+						<b><label id="Draw_Profit" type="text" value="0.00"></label></b>
 					</td>
 					<td style="display:none">
 						<label id="Draw_TotalWager" type="text" value="0.00"></label>
@@ -120,7 +120,7 @@
 			<thead>
 				<tr style="text-align:center">
 					<th>
-						Min Profit
+						Min Profit/Previous Loss
 					</th>
 				</tr>
 			</thead>
@@ -132,7 +132,7 @@
 				</tr>				
 			</tbody>
 		</table>
-		<table class="tablesorter">
+		<table class="tablesorter" style="display:none">
 			<thead>
 				<tr style="text-align:center">
 					<th>
