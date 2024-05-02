@@ -296,7 +296,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 	//console.log("prevLossAll: " + Number(prevLossAll).toFixed(2));
 	
 	profitAll = Number(parseInt(minProfitAll) + parseInt(prevLossAll)).toFixed(2);
-	//console.log("profitAll: " + Number(profitAll).toFixed(2));
+	console.log("profitAll: " + Number(profitAll).toFixed(2));
 	
 	wager0 = 0.50;
 	payout0 = 0.00; 
