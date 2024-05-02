@@ -507,7 +507,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 
 function nextPass0(){
 	console.log("nextPass0");
-	while(profit0 < profitAll){
+	//while(profit0 < profitAll){
 		//wager0 = +wager0 + 0.01;
 		payout0 = wager0 * decOdds0;
 		payout0 = Number(payout0).toFixed(2);
@@ -530,7 +530,7 @@ function nextPass0(){
 		if(profit0 < profitAll){
 			wager0 = +wager0 + 0.01;
 		}
-	}
+	//}
 }
 function nextPass1(){
 	console.log("nextPass1");
