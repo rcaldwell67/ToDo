@@ -581,11 +581,11 @@ function nextPass2(){
 		}
 		if(profit1 < profitAll){
 			//wager1 = +wager1 + 0.01;
-			nextPass1();
+			//nextPass1();
 		}
 		if(profit0 < profitAll){
 			//wager1 = +wager1 + 0.01;
-			nextPass0();
+			//nextPass0();
 		}
 	}
 }
