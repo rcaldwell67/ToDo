@@ -343,7 +343,11 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 	wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
 	wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
 	//console.log("wagerAll: " + Number(wagerAll).toFixed(2));
-		
+	
+	console.log("profit0: " + Number(profit0).toFixed(2));
+	console.log("payout0: " + Number(payout0).toFixed(2));
+	console.log("wager0: " + Number(wager0).toFixed(2));
+	console.log("wager1: " + Number(wager1).toFixed(2));
 	while ((profit0 < payout0 - (wager0 + wager1))) { // || (profit1 < profitAll) || (profit2 < profitAll) ||(profit3 < profitAll) || (profit4 < profitAll) || (profit5 < profitAll)){// || (profit6 < profitAll)) {
 		console.log("SET Profit");
 		//console.log("parseFloat(profit1): " + parseFloat(profit1));
