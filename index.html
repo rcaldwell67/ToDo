@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet" href="./wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./wwwroot/css/site.css" />
+<!-- 	<link rel="stylesheet" href="./wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./wwwroot/css/site.css" /> -->
 
     <!-- jQuery: required (tablesorter works with jQuery 1.2.3+) -->
-    <script src="./wwwroot/lib/jquery/dist/jquery-3.5.0.min.js"></script>
-
+<!--     <script src="./wwwroot/lib/jquery/dist/jquery-3.5.0.min.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+  integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+  crossorigin="anonymous"></script>
     <!-- Pick a theme, load the plugin & initialize plugin -->
-    <link href="./wwwroot/css/theme.default.css" rel="stylesheet">
+<!--     <link href="./wwwroot/css/theme.default.css" rel="stylesheet">
     <script src="./wwwroot/lib/jquery/dist/jquery.js"></script>
     <script src="./wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="./wwwroot/js/site.js" asp-append-version="true"></script>
     <script src="./wwwroot/js/jquery.tablesorter.min.js"></script>
-    <script src="./wwwroot/js/jquery.tablesorter.widgets.min.js"></script>
-    
+    <script src="./wwwroot/js/jquery.tablesorter.widgets.min.js"></script> -->
+    <script src="site.js" asp-append-version="true"></script>
+	
 	<title>SB</title>
 	<link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -26,7 +30,7 @@
 </head>
   <body>
 	<div>
-		<table class="tablesorter">
+		<table>
 			<thead>
 				<tr style="text-align:center">
 					<th> 
@@ -109,7 +113,7 @@
 				</tr>
 				<tr style="text-align:center">
 					<td>
-						<label>UD2</label>
+						<label>UD1</label>
 					</td>
 					<td>
 						<input  id="2_Odds" type="text" style="text-align:left"></input>
@@ -130,7 +134,7 @@
 						<b><label id="2_Profit" type="text" value="0.00"></label></b>
 					</td>
 				</tr>
-				<tr style="text-align:center;display:none;">
+				<tr style="text-align:center;display:none">
 					<td>
 						<label>3</label>
 					</td>
@@ -153,7 +157,7 @@
 						<b><label id="3_Profit" type="text" value="0.00"></label></b>
 					</td>
 				</tr>
-				<tr style="text-align:center;display:none;">
+				<tr style="text-align:center;display:none">
 					<td>
 						<label>4</label>
 					</td>
@@ -176,7 +180,7 @@
 						<b><label id="4_Profit" type="text" value="0.00"></label></b>
 					</td>
 				</tr>
-				<tr style="text-align:center;display:none;">
+				<tr style="text-align:center;display:none">
 					<td>
 						<label>5</label>
 					</td>
@@ -199,7 +203,7 @@
 						<b><label id="5_Profit" type="text" value="0.00"></label></b>
 					</td>
 				</tr>
-				<tr style="text-align:center;display:none;">
+				<tr style="text-align:center;display:none">
 					<td>
 						<label>6</label>
 					</td>
@@ -224,7 +228,8 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="tablesorter">
+		<br />
+		<table>
 			<thead>
 				<tr style="text-align:center">
 					<th>
@@ -240,7 +245,7 @@
 				</tr>				
 			</tbody>
 		</table>
-		<table class="tablesorter" style="display:none">
+		<table style="display:none">
 			<thead>
 				<tr style="text-align:center">
 					<th>
@@ -256,19 +261,11 @@
 				</tr>				
 			</tbody>
 		</table>
+		</br>
+		<div>
+		<button type="button" onclick="calcProfit()">Calculate</button>
+		</div>
 	</div>
 	<br />
-	<!-- <div>
-	<h6>Process</h6>
-	<p>
-	<ul>
-		<li>Payout = Wager x DecOdds</li>
-		<li>Win = Payout - Wager</li>
-		<li>Wager = (Win/Odds) x 100</li>
-		<li>TotalProfit = FAWin - DrawWager</li>
-		<li>TotalProfit = DrawWin - FAWager</li>
-	</ul>
-	</p>
-	</div> -->
    </body>
 </html>
