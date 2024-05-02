@@ -424,7 +424,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 		wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
 		wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
 
-	while ((profit3 < profitAll)) {
+	/* while ((profit3 < profitAll)) {
 		nextPass3();
 		updateProfit();
 	}
@@ -450,7 +450,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 		//updateProfit();
 	}
 		wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
-		wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
+		wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6; */
 		
 /* 	if(profit6 < profitAll){
 		console.log("HERE");
