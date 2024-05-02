@@ -414,8 +414,8 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 		profit6 = parseInt(payout6) - (parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6));
 		profit6 = Number((payout6 - (wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6)).toFixed(2)); */
 			
-		wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
-		wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
+		//wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
+		//wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
 		//console.log("wagerAll: " + Number(wagerAll).toFixed(2));
 	}
 
