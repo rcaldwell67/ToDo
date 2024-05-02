@@ -556,7 +556,7 @@ function nextPass1(){
 }
 function nextPass2(){
 	console.log("nextPass2");
-	while(profit2 < profitAll){// && profit0 >= profitAll && profit1 >= profitAll){
+	while(profit2 < payout2 - (wager0 + wager1 + wager2)){// && profit0 >= profitAll && profit1 >= profitAll){
 		//wager2 = +wager2 + 0.01;
 		payout2 = wager2 * decOdds2;
 		payout2 = Number(payout2).toFixed(2);
