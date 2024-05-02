@@ -355,6 +355,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 		
 		nextPass0();
 		updateProfit();
+		tableResults();
 		
 /* 		nextPass1();
 		updateProfit();
@@ -484,7 +485,7 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 	//wagerAll = Number(wagerAll).toFixed(2);
 	console.log("wagerAll: " + Number(wagerAll).toFixed(2));
 		
-	tableResults();
+	//tableResults();
 /* 	console.log("Starting nextPass0");
 	console.log("profit0: " + Number(profit0).toFixed(2));
 	while ((profit0 < 0)){// || (profit1 < 0) || (profit2 < 0) || (profit3 < 0) || (profit4 < 0) || (profit5 < 0)){
