@@ -410,12 +410,12 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 		//console.log("wagerAll: " + Number(wagerAll).toFixed(2));
 	}
 
-	while ((profit1 < profitAll)) {
-		nextPass1();
-		updateProfit();
-	}
-		wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
-		wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
+	//while ((profit1 < profitAll)) {
+	//	nextPass1();
+	//	updateProfit();
+	//}
+	//	wagerAll = parseInt(wager0) + parseInt(wager1) + parseInt(wager2) + parseInt(wager3) + parseInt(wager4) + parseInt(wager5) + parseInt(wager6);
+	//	wagerAll = wager0 + wager1 + wager2 + wager3 + wager4 + wager5 + wager6;
 	
 	//while ((profit2 < profitAll)) {
 	//	nextPass2();
