@@ -304,13 +304,13 @@ function calcProfit(decOdds0, decOdds1, decOdds2, decOdds3, decOdds4, decOdds5, 
 	profit0 = 0.00; 
 	//console.log("profit0: " + Number(profit0).toFixed(2));
 	
-	wager1 = 0.50;
+	wager1 = 0.00;
 	payout1 = 0.00; 
 	win1 = 0.00; 
 	profit1 = 0.00; 
 	//console.log("profit1: " + Number(profit1).toFixed(2));
 	
-	wager2 = 0.50;
+	wager2 = 0.00;
 	payout2 = 0.00; 
 	win2 = 0.00; 
 	profit2 = 0.00; 
