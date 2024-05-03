@@ -487,8 +487,8 @@ function calcProfit(){
 	
 	profitAll = Number(parseFloat(minProfitAll) + parseFloat(prevLossAll)).toFixed(2);
 
-	wager0 = 0.50;
-	wager1 = 0.50;
+	wager0 = 0.00;
+	wager1 = 0.00;
 	wager2 = 0.00;
 
 	if(decOdds0 > 0){
@@ -534,7 +534,7 @@ function calcProfit(){
 		wager1 = 0.00;
 	}
 	if(decOdds2 > 0 && decOdds2 != "" && decOdds2 != "undefined"){
-		wager2 = 0.50;
+		//wager2 = 0.50;
 		calcWager2();
 		//if(profit0 
 /* 		console.log("wager2: " + Number(wager2).toFixed(2));
@@ -555,6 +555,16 @@ function calcProfit(){
 		console.log("profit2: " + Number(profit2).toFixed(2)); */
 	}else{
 		wager2 = 0.00;
+	}
+	
+	profit0 = parseFloat(payout0) - (parseFloat(wager1) + parseFloat(wager0) + parseFloat(wager2));
+	profit0 = Number(payout0 - (wager1 + wager0 + wager2));
+	whileprofit0 < profitAll(){
+		calcWager0();
+
+		profit1 = parseFloat(payout1) - (parseFloat(wager1) + parseFloat(wager0) + parseFloat(wager2));
+		profit1 = Number(payout1 - (wager1 + wager0 + wager2));
+		calcWager1();
 	}
 	
 	wagerAll = parseFloat(wager0) + parseFloat(wager1) + parseFloat(wager2);
