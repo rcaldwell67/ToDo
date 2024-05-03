@@ -559,7 +559,7 @@ function calcProfit(){
 	
 	profit0 = parseFloat(payout0) - (parseFloat(wager1) + parseFloat(wager0) + parseFloat(wager2));
 	profit0 = Number(payout0 - (wager1 + wager0 + wager2));
-	whileprofit0 < profitAll(){
+	while (profit0 < profitAll){
 		calcWager0();
 
 		profit1 = parseFloat(payout1) - (parseFloat(wager1) + parseFloat(wager0) + parseFloat(wager2));
